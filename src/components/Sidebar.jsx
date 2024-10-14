@@ -8,6 +8,7 @@ import List from '@mui/material/List';
 import Divider from '@mui/material/Divider';
 import CssBaseline from '@mui/material/CssBaseline';
 import AlignItemsList from './Users';
+import Chatbox from './Chatbox';
 
 const drawerWidth = 280; 
 
@@ -80,15 +81,7 @@ export default function PersistentDrawerLeft() {
       </Drawer>
       
 
-      <Box
-        component="main"
-        sx={{ flexGrow: 1, bgcolor: '#191919', p: 3, width: `calc(100% - ${drawerWidth}px)` ,height:"100vh"}}
-      >
-        <Toolbar /> 
-        <Typography paragraph>
-          Welcome to the chat interface. This is where the chat window will be.
-        </Typography>
-      </Box>
+        <Chatbox></Chatbox>
     </Box>
   );
 }

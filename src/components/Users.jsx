@@ -12,7 +12,7 @@ export default function AlignItemsList() {
     <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
       <ListItem alignItems="center">
         <ListItemAvatar>
-          <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
+          <Avatar alt="Piyush" src="/static/images/avatar/1.jpg" />
         </ListItemAvatar>
         <ListItemText
 
@@ -23,53 +23,15 @@ export default function AlignItemsList() {
                 variant="body2"
                 sx={{ color: 'text.primary', display: 'inline' }}
               >
-                Ali Connors
+                Piyush
               </Typography>
             </React.Fragment>
           }
         />
       </ListItem>
       <Divider />
-      <ListItem alignItems="center">
-        <ListItemAvatar>
-          <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
-        </ListItemAvatar>
-        <ListItemText
 
-          secondary={
-            <React.Fragment>
-              <Typography
-                component="span"
-                variant="body2"
-                sx={{ color: 'text.primary', display: 'inline' }}
-              >
-                Ali Connors
-              </Typography>
-            </React.Fragment>
-          }
-        />
-      </ListItem>
-      <Divider />
-      <ListItem alignItems="center">
-        <ListItemAvatar>
-          <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
-        </ListItemAvatar>
-        <ListItemText
-
-          secondary={
-            <React.Fragment>
-              <Typography
-                component="span"
-                variant="body2"
-                sx={{ color: 'text.primary', display: 'inline' }}
-              >
-                Ali Connors
-              </Typography>
-            </React.Fragment>
-          }
-        />
-      </ListItem>
-      <Divider />
+      
     </List>
   );
 }
