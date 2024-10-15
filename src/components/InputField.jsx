@@ -34,24 +34,25 @@ export default function InputField(){
     }
     return(
         <TextField
-        onChange = {handleInputChange}
-        onKeyUp={handleEnterButtonClick}
-        value={inputValue}
-        fullWidth
-        variant="outlined"
-        placeholder="Type your message..."
-        sx={{
-          bgcolor: 'white',
-          borderRadius: '20px',
-          input: { padding: '10px' }
-        }}
-        InputProps={{
-          endAdornment: (
-            <InputAdornment position="end">
-              <SendIcon sx={{cursor:'pointer'}}onClick={handleSendMessage}/>
-            </InputAdornment>
-          ),
-        }}
-      />
+          onChange={handleInputChange}
+          onKeyUp={handleEnterButtonClick}
+          value={inputValue}
+          fullWidth
+          variant="outlined"
+          placeholder="Type your message..."
+          sx={{
+            bgcolor: 'white',
+            borderRadius: '20px',
+            input: { padding: '10px', fontSize: { xs: '0.875rem', md: '1rem' } }, // Adjust padding and font size
+          }}
+          InputProps={{
+            endAdornment: (
+              <InputAdornment position="end">
+                <SendIcon sx={{ cursor: 'pointer' }} onClick={handleSendMessage} />
+              </InputAdornment>
+            ),
+          }}
+        />
+
     )
 }

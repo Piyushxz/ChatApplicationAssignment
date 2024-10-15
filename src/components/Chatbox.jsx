@@ -15,37 +15,38 @@ function Chatbox() {
     dispatch(receiveMessage(`Hey ${name},How are you?`))
   },[])
   return (
-    <Box
-      component="main"
-      sx={{
-        flexGrow: 1,
-        bgcolor: '#191919',
-        p: 3,
-        width: `calc(100% - ${drawerWidth}px)`,
-        height: '100vh',
-        display: 'flex',
-        flexDirection: 'column',
-      }}
-    >
-      <Typography paragraph sx={{ color: 'white' }}>
-        Welcome to the chat interface. This is where the chat window will be.
-      </Typography>
-      <Messages />
-      <AppBar
-        sx={{
-          top: 'auto',
-          bottom: 0,
-          width: `calc(100% - ${drawerWidth}px)`,
-          ml: `${drawerWidth}px`,
-          bgcolor: 'black',
-        }}
-        position="fixed"
-      >
-        <Toolbar>
-          <InputField />
-        </Toolbar>
-      </AppBar>
-    </Box>
+<Box
+  component="main"
+  sx={{
+    flexGrow: 1,
+    bgcolor: '#191919',
+    p: { xs: 1, sm: 3 }, // Padding adjusts based on screen size
+    width: { xs: '100%', md: `calc(100% - ${drawerWidth}px)` }, // Full width on small screens
+    height: '100vh',
+    display: 'flex',
+    flexDirection: 'column',
+  }}
+>
+  <Typography paragraph sx={{ color: 'white', fontSize: { xs: '0.875rem', md: '1rem' } }}>
+    Welcome to the chat interface. This is where the chat window will be.
+  </Typography>
+  <Messages />
+  <AppBar
+    sx={{
+      top: 'auto',
+      bottom: 0,
+      width: { xs: '100%', md: `calc(100% - ${drawerWidth}px)` }, // Full width on mobile, adjusted on desktop
+      ml: { md: `${drawerWidth}px` },
+      bgcolor: 'black',
+    }}
+    position="fixed"
+  >
+    <Toolbar>
+      <InputField />
+    </Toolbar>
+  </AppBar>
+</Box>
+
   );
 }
 

@@ -14,7 +14,7 @@ export default function Home() {
   };
 
   const handleButtonClick = () => {
-    if (username.length > 0) { // Ensure username has value
+    if (username.length > 0) { 
       dispatch(setUsername(username));
       localStorage.setItem("name", username);
       navigate("/chat");
@@ -31,17 +31,19 @@ export default function Home() {
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
+        padding: '20px',
       }}
     >
       <Typography
         sx={{
           fontFamily: 'Montserrat',
           fontWeight: 900,
-          fontSize: '5rem',
+          fontSize: { xs: '3rem', sm: '4rem', md: '5rem' }, 
           background: 'linear-gradient(to right, #2dd4bf, #3b82f6)',
           WebkitBackgroundClip: 'text',
           backgroundClip: 'text',
           color: 'transparent',
+          textAlign: 'center',
         }}
         variant="h6"
         noWrap
@@ -49,7 +51,11 @@ export default function Home() {
       >
         Whisper.com
       </Typography>
-      <Box>
+      <Box
+        sx={{
+          width: { xs: '100%', sm: '350px' }, 
+        }}
+      >
         <TextField
           onChange={handleNameChange}
           placeholder="Enter your name"
@@ -57,25 +63,27 @@ export default function Home() {
             bgcolor: 'white',
             borderRadius: '20px',
             input: { padding: '10px' },
-            width: '350px'
+            width: '100%', // Make it full width on smaller screens
           }}
         />
       </Box>
       <Paper
         sx={{
-          padding: '10px',
+          padding: { xs: '8px', sm: '10px' }, 
           borderRadius: '15px',
           backgroundColor: '#888888',
           maxWidth: '70%',
           display: 'flex',
           alignItems: 'center',
+          justifyContent: 'center',
           '&:hover': {
             backgroundColor: 'lightgrey',
           },
           cursor: 'pointer',
           fontFamily: "Montserrat",
           fontWeight: "700",
-          marginTop: "20px"
+          marginTop: "20px",
+          width: { xs: '100%', sm: 'auto' }, 
         }}
         onClick={handleButtonClick}
       >
@@ -87,7 +95,8 @@ export default function Home() {
           fontWeight: 900,
           fontSize: '1rem',
           color: 'white',
-          marginTop: "30px"
+          marginTop: "30px",
+          textAlign: 'center',
         }}
       >
         Chat Application created by Piyush
