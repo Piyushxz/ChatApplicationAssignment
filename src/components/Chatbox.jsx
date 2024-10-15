@@ -4,9 +4,16 @@ import { List, ListItem, Paper, Typography, Box, TextField, InputAdornment, AppB
 import SendIcon from '@mui/icons-material/Send';
 import InputField from "./InputField"
 import Messages from './Messages';
+import { receiveMessage } from '../features/messageSlice';
+
 const drawerWidth = 280;
 
 function Chatbox() {
+  const name = localStorage.getItem("name")
+  const dispatch = useDispatch()
+  useEffect(()=>{
+    dispatch(receiveMessage(`Hey ${name},How are you?`))
+  },[])
   return (
     <Box
       component="main"

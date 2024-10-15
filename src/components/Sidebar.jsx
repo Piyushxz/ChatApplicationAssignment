@@ -10,13 +10,19 @@ import CssBaseline from '@mui/material/CssBaseline';
 import AlignItemsList from './Users';
 import Chatbox from './Chatbox';
 import { Paper, SvgIcon } from '@mui/material';
-
+import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { clearMessages } from '../features/messageSlice';
 const drawerWidth = 280; 
 
 export default function PersistentDrawerLeft() {
+  const navigate = useNavigate()
+  const dispatch = useDispatch()
+
   const handleLogout = () => {
- 
-    console.log("Logout clicked");
+    dispatch(clearMessages())
+    localStorage.clear();
+    navigate("/")
   };
 
   return (

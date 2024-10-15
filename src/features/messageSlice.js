@@ -2,8 +2,6 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
     messages: [
-        { id: 1, message: "Hey", sentBy: "User", timestamp: new Date().toLocaleString() },
-        { id: 2, message: "Hey Bot here", sentBy: "Bot", timestamp: new Date().toLocaleString() }
     ],
     name:null
 };
@@ -33,11 +31,14 @@ export const messageSlice = createSlice({
         },
         setUsername :(state,action) =>{
             state.name = action.payload
+        },
+        clearMessages:(state,action)=>{
+            state.messages = []
         }
     }
 });
 
-export const { sendMessage, receiveMessage } = messageSlice.actions;
+export const { sendMessage, receiveMessage ,setUsername,clearMessages} = messageSlice.actions;
 
 
 export default messageSlice.reducer;
