@@ -57,9 +57,9 @@ export default function PersistentDrawerLeft() {
               display: 'flex',
               alignItems: 'center',
               '&:hover': {
-                backgroundColor: 'lightgrey', // Change background color on hover
+                backgroundColor: 'lightgrey', 
               },
-              cursor: 'pointer', // Change cursor to pointer
+              cursor: 'pointer', 
             }}
             onClick={handleLogout}
           >

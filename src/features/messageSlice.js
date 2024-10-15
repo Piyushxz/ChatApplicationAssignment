@@ -4,7 +4,8 @@ const initialState = {
     messages: [
         { id: 1, message: "Hey", sentBy: "User", timestamp: new Date().toLocaleString() },
         { id: 2, message: "Hey Bot here", sentBy: "Bot", timestamp: new Date().toLocaleString() }
-    ]
+    ],
+    name:null
 };
 
 export const messageSlice = createSlice({
@@ -29,6 +30,9 @@ export const messageSlice = createSlice({
                 timestamp: new Date().toLocaleString() 
             };
             state.messages.push(message); 
+        },
+        setUsername :(state,action) =>{
+            state.name = action.payload
         }
     }
 });
