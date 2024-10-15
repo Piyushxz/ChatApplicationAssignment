@@ -1,18 +1,12 @@
-import * as React from 'react';
-import Box from '@mui/material/Box';
-import Drawer from '@mui/material/Drawer';
-import AppBar from '@mui/material/AppBar';
-import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
-import InputField from './InputField';
-
-
+import React, { useState, useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { List, ListItem, Paper, Typography, Box, TextField, InputAdornment, AppBar, Toolbar } from '@mui/material';
+import SendIcon from '@mui/icons-material/Send';
+import InputField from "./InputField"
+import Messages from './Messages';
 const drawerWidth = 280;
 
-export default function Chatbox() {
-
-
-
+function Chatbox() {
   return (
     <Box
       component="main"
@@ -22,19 +16,14 @@ export default function Chatbox() {
         p: 3,
         width: `calc(100% - ${drawerWidth}px)`,
         height: '100vh',
-        position: 'relative',
         display: 'flex',
         flexDirection: 'column',
       }}
     >
-
       <Typography paragraph sx={{ color: 'white' }}>
         Welcome to the chat interface. This is where the chat window will be.
       </Typography>
-
-
-      <Chatbox/>
-      {/* App bar at the bottom */}
+      <Messages />
       <AppBar
         sx={{
           top: 'auto',
@@ -52,3 +41,9 @@ export default function Chatbox() {
     </Box>
   );
 }
+
+
+
+
+
+export default Chatbox;

@@ -2,6 +2,8 @@ import  TextField from '@mui/material/TextField'
 import InputAdornment from '@mui/material/InputAdornment';
 import SendIcon from '@mui/icons-material/Send';
 import { useState } from "react";
+import { useDispatch } from 'react-redux';
+import {sendMessage} from "../features/messageSlice"
 export default function InputField(){
 
     const [inputValue,setInputValue]= useState()

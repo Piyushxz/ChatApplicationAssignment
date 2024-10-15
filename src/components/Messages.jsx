@@ -1,8 +1,8 @@
-import { List, ListItem, Paper } from '@mui/material';
+
 import { useSelector } from 'react-redux';
-import Box from '@mui/material/Box';
 
 
+import { List, ListItem, Paper, Typography, Box, TextField, InputAdornment, AppBar, Toolbar } from '@mui/material';
 export default function Messages(){
 
     const messages = useSelector((state) => state.message.messages);
